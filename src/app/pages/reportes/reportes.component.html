@@ -1,0 +1,69 @@
+<div class="example-header mat-elevation-z8">
+    <mat-form-field>
+        <input matInput (keyup)="filtrado($event.target.value)" placeholder="Ingrese busqueda">
+    </mat-form-field>
+</div>
+<br>
+<div class="example-container mat-elevation-z8">
+</div>
+
+<div class="example-container mat-elevation-z8">
+    <mat-table [dataSource]="dataSource" matSort>
+
+        <ng-container matColumnDef="cedula1">
+            <mat-header-cell *matHeaderCellDef mat-sort-header>CEDULA ECE/OC</mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.cedula1}} </mat-cell>
+        </ng-container>
+
+
+        <ng-container matColumnDef="razonSoc">
+            <mat-header-cell *matHeaderCellDef mat-sort-header>RAZON SOCIAL ECE/OC</mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.razonSoc}} </mat-cell>
+        </ng-container>
+
+
+        <ng-container matColumnDef="cedula2">
+            <mat-header-cell *matHeaderCellDef mat-sort-header>CEDULA CE/EL</mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.cedula2}} </mat-cell>
+        </ng-container>
+
+
+        <ng-container matColumnDef="nombreComRazon">
+            <mat-header-cell *matHeaderCellDef mat-sort-header>NOMBRE COMPLETO/RAZON SOCIAL CE</mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.nombreComRazon}} </mat-cell>
+        </ng-container>
+
+
+        <ng-container matColumnDef="codigo">
+            <mat-header-cell *matHeaderCellDef mat-sort-header>CODIGO</mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.codigo}} </mat-cell>
+        </ng-container>
+
+
+        <ng-container matColumnDef="titulo">
+            <mat-header-cell *matHeaderCellDef mat-sort-header>TITULO</mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.titulo}} </mat-cell>
+        </ng-container>
+
+
+        <ng-container matColumnDef="fechaVig">
+            <mat-header-cell *matHeaderCellDef mat-sort-header>FECHA FINAL VIGENCIA</mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.fechaVig}} </mat-cell>
+        </ng-container>
+
+
+        <ng-container matColumnDef="estatus">
+            <mat-header-cell *matHeaderCellDef mat-sort-header>ESTATUS</mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.estatus}} </mat-cell>
+        </ng-container>
+
+
+        <ng-container matColumnDef="entidadFed">
+            <mat-header-cell *matHeaderCellDef mat-sort-header>ENTIDAD FEDERETIVA</mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.entidadFed}}</mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="displayedColumns" class="encabezado"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+</div>
